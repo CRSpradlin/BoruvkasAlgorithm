@@ -3,6 +3,26 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
+class Main{
+  public static void main(String[] args) {
+    Graph g = new Graph();
+
+    //Test Graph 1: MST Edges = [1, 2, 5, 4, 3, 6]
+    g.putNode(1, 6, 5);
+    g.putNode(1, 8, 9, 2);
+    g.putNode(2, 10);
+    g.putNode(7, 6, 8, 4);
+    g.putNode(5, 7);
+    g.putNode(4, 3);
+    g.putNode(3, 9, 10);
+
+    System.out.println("Edges that form the MST: " + g.createMST());
+
+    //g.printGraph();
+
+  }
+}
+
 //Assumes graph has distinct edge weights and that the graph is a complete graph (no loose substrees)
 
 class Graph {
@@ -163,24 +183,4 @@ class Graph {
   }
 
 
-}
-
-class Main{
-  public static void main(String[] args) {
-    Graph g = new Graph();
-
-    //Test Graph 1: MST Edges = [1, 2, 5, 4, 3, 6]
-    g.putNode(1, 6, 5);
-    g.putNode(1, 8, 9, 2);
-    g.putNode(2, 10);
-    g.putNode(7, 6, 8, 4);
-    g.putNode(5, 7);
-    g.putNode(4, 3);
-    g.putNode(3, 9, 10);
-
-    System.out.println("Edges that form the MST: " + g.createMST());
-
-    //g.printGraph();
-
-  }
 }
